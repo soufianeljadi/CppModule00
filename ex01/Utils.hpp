@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-jadi <sel-jadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 16:54:46 by sel-jadi          #+#    #+#             */
-/*   Updated: 2024/11/29 16:24:31 by sel-jadi         ###   ########.fr       */
+/*   Created: 2024/11/28 16:37:07 by sel-jadi          #+#    #+#             */
+/*   Updated: 2024/11/29 15:40:38 by sel-jadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef UTILS_HPP
 
+# define UTILS_HPP
 
-#include "Contact.hpp"
-#include "Utils.hpp"
+# include <iostream>
+# include "Contact.hpp"
 
-class	Phonebook
-{
-	private:
-		Contact	_contacts[8];
-		int		_index;
-	public:
-		Phonebook();
-		~Phonebook();
-		void	add();
-		void	search();
-		void	print(Contact contact);
-		Contact	get_contact(int index);
-};
+/* Returns a string with n spaces */
+std::string	add_spaces(int n);
+
+/* Ensures a string has at most 'max' chars, adding '.' when needed */
+std::string	fix_width(std::string str, long unsigned max);
+
+/* Prints existing contacts with a pretty format */
+int			search_ui(Contact contacts[8]);
 
 #endif

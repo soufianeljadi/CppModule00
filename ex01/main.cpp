@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-jadi <sel-jadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 16:54:46 by sel-jadi          #+#    #+#             */
-/*   Updated: 2024/11/29 16:24:31 by sel-jadi         ###   ########.fr       */
+/*   Created: 2024/11/26 16:28:37 by sel-jadi          #+#    #+#             */
+/*   Updated: 2024/12/02 16:46:36 by sel-jadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "Phonebook.hpp"
 
-
-#include "Contact.hpp"
-#include "Utils.hpp"
-
-class	Phonebook
+int	main()
 {
-	private:
-		Contact	_contacts[8];
-		int		_index;
-	public:
-		Phonebook();
-		~Phonebook();
-		void	add();
-		void	search();
-		void	print(Contact contact);
-		Contact	get_contact(int index);
-};
+	std::string	str;
+	Phonebook 	ph1;
 
-#endif
+	while (str != "EXIT")
+	{
+		std::cout << "Enter a command > ";
+		std::getline(std::cin, str);
+		if (str == "ADD")
+			ph1.add();
+		else if (str == "SEARCH")
+			ph1.search();
+		if (std::cin.eof())
+		{
+			std::cout << std::endl;
+			return (0);
+		}
+	}
+	return (0);
+}

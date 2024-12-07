@@ -6,7 +6,7 @@
 /*   By: sel-jadi <sel-jadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:37:19 by sel-jadi          #+#    #+#             */
-/*   Updated: 2024/11/29 15:40:42 by sel-jadi         ###   ########.fr       */
+/*   Updated: 2024/12/07 17:07:53 by sel-jadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ std::string	add_spaces(int n)
 	return (str);
 }
 
-std::string	fix_width(std::string str, long unsigned max)
+std::string	wide(std::string str)
 {
-	if (str.size() > max)
+	if (str.size() > 10)
 	{
-		str.resize(max);
+		str.resize(10);
 		str[str.size() - 1] = '.';
 	}
 	return (str);
@@ -44,16 +44,16 @@ int	search_ui(Contact contacts[8])
 	i = 0;
 	while (++c <= '8')
 	{
-		if (contacts[c - 1 - '0'].get_fname().size() && ++i)
+		if (contacts[c - 1 - 48].get_first_name().size() && ++i)
 		{
 			str = c;
-			str = fix_width(str, 10);
+			str = wide(str);
 			std::cout << "|" << add_spaces(10 - str.size()) << str;
-			str = fix_width(contacts[c - 1  - '0'].get_fname(), 10);
+			str = wide(contacts[c - 1  - 48].get_first_name());
 			std::cout << "|" << add_spaces(10 - str.size()) << str;
-			str = fix_width(contacts[c - 1 - '0'].get_lname(), 10);
+			str = wide(contacts[c - 1 - 48].get_last_name());
 			std::cout << "|" << add_spaces(10 - str.size()) << str;
-			str = fix_width(contacts[c - 1 - '0'].get_nick(), 10);
+			str = wide(contacts[c - 1 - 48].get_nickname());
 			std::cout << "|" << add_spaces(10 - str.size()) << str;
 			std::cout << "|" << std::endl;
 		}

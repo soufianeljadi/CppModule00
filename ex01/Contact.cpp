@@ -6,7 +6,7 @@
 /*   By: sel-jadi <sel-jadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:54:39 by sel-jadi          #+#    #+#             */
-/*   Updated: 2024/11/29 15:40:13 by sel-jadi         ###   ########.fr       */
+/*   Updated: 2024/12/07 16:55:44 by sel-jadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,52 +20,52 @@ Contact::~Contact(void)
 {
 }
 
-std::string	Contact::get_fname(void) const
+std::string	Contact::get_first_name(void) const
 {
-	return (this->_fname);
+	return (this->_first_name);
 }
 
-std::string	Contact::get_lname(void) const
+std::string	Contact::get_last_name(void) const
 {
-	return (this->_lname);
+	return (this->_last_name);
 }
 
-std::string	Contact::get_nick(void) const
+std::string	Contact::get_nickname(void) const
 {
-	return (this->_nick);
+	return (this->_nickname);
 }
 
-std::string	Contact::get_phone_num(void) const
+std::string	Contact::get_phone_number(void) const
 {
-	return (this->_phone_num);
+	return (this->_phone_number);
 }
 
-std::string	Contact::get_secret(void) const
+std::string	Contact::get_darkest_secret(void) const
 {
-	return (this->_secret);
+	return (this->_darkest_secret);
 }
 
-void	Contact::set_fname(std::string str)
+void	Contact::set_first_name(std::string str)
 {
-	this->_fname = str;
+	this->_first_name = str;
 }
 
-void	Contact::set_lname(std::string str)
+void	Contact::set_last_name(std::string str)
 {
-	this->_lname = str;
+	this->_last_name = str;
 }
 
-void	Contact::set_nick(std::string str)
+void	Contact::set_nickname(std::string str)
 {
-	this->_nick = str;
+	this->_nickname = str;
 }
 
-void	Contact::set_phone_num(std::string str)
+void	Contact::set_phone_number(std::string str)
 {
-	this->_phone_num = str;
+	this->_phone_number = str;
 }
 
-void	Contact::set_secret(std::string str)
+void	Contact::set_darkest_secret(std::string str)
 {
-	this->_secret = str;
+	this->_darkest_secret = str;
 }

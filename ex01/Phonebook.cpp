@@ -6,7 +6,7 @@
 /*   By: sel-jadi <sel-jadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:44:42 by sel-jadi          #+#    #+#             */
-/*   Updated: 2024/12/02 16:45:42 by sel-jadi         ###   ########.fr       */
+/*   Updated: 2024/12/07 16:56:02 by sel-jadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,42 +32,42 @@ void	Phonebook::add(void)
 
 	str = "";
 	if (this->_index > 7)
-		std::cout << "Warning: overwriting info about " << this->_contacts[this->_index % 8].get_fname() << std::endl;
+		std::cout << "Warning: overwriting info about " << this->_contacts[this->_index % 8].get_first_name() << std::endl;
 	while (!std::cin.eof() && str == "")
 	{
 		std::cout << "Enter a first name: ";
 		if (std::getline(std::cin, str) && str != "")
-			this->_contacts[this->_index % 8].set_fname(str);
+			this->_contacts[this->_index % 8].set_first_name(str);
 	}
 	str = "";
 	while (!std::cin.eof() && str == "")
 	{
-		std::cout << "Enter " << this->_contacts[this->_index % 8].get_fname() << "'s last name: ";
+		std::cout << "Enter " << this->_contacts[this->_index % 8].get_first_name() << "'s last name: ";
 		if (std::getline(std::cin, str) && str != "")
-			this->_contacts[this->_index % 8].set_lname(str);
+			this->_contacts[this->_index % 8].set_last_name(str);
 	}
 	str = "";
 	while (!std::cin.eof() && str == "")
 	{
-		std::cout << "Enter " << this->_contacts[this->_index % 8].get_fname() << "'s nickname: "; 
+		std::cout << "Enter " << this->_contacts[this->_index % 8].get_first_name() << "'s nickname: "; 
 		if (std::getline(std::cin, str) && str != "")
-			this->_contacts[this->_index % 8].set_nick(str);
+			this->_contacts[this->_index % 8].set_nickname(str);
 	}
 	str = "";
 	while (!std::cin.eof() && str == "")
 	{
-		std::cout << "Enter " << this->_contacts[this->_index % 8].get_fname() << "'s phone number: ";
+		std::cout << "Enter " << this->_contacts[this->_index % 8].get_first_name() << "'s phone number: ";
 		if (std::getline(std::cin, str) && str != "")
-			this->_contacts[this->_index % 8].set_phone_num(str);
+			this->_contacts[this->_index % 8].set_phone_number(str);
 	}
 	str = "";
 	while (!std::cin.eof() && str == "")
 	{
-		std::cout << "Enter " << this->_contacts[this->_index % 8].get_fname() << "'s darkest secret: ";
+		std::cout << "Enter " << this->_contacts[this->_index % 8].get_first_name() << "'s darkest secret: ";
 		if (std::getline(std::cin, str) && str != "")
 		{
-			this->_contacts[this->_index % 8].set_secret(str);
-			std::cout << this->_contacts[this->_index % 8].get_fname() << \
+			this->_contacts[this->_index % 8].set_darkest_secret(str);
+			std::cout << this->_contacts[this->_index % 8].get_first_name() << \
 				" successfully added to phonebook [" << this->_index % 8 + 1 << "/8]" << std::endl;
 		}
 	}
@@ -77,16 +77,16 @@ void	Phonebook::add(void)
 void	Phonebook::print(Contact contact)
 {
 	std::cout << std::endl << "Requesting contact information..." << std::endl;
-	if (!contact.get_fname().size())
+	if (!contact.get_first_name().size())
 	{
 		std::cout << "Failed to get info for this contact" << std::endl;
 		return ;
 	}
-	std::cout << "First Name: " << contact.get_fname() << std::endl;
-	std::cout << "Last Name: " << contact.get_lname() << std::endl;
-	std::cout << "Nickname: " << contact.get_nick() << std::endl;
-	std::cout << "Phone Number: " << contact.get_phone_num() << std::endl;
-	std::cout << "Darkest Secret: " << contact.get_secret() << std::endl;
+	std::cout << "First Name: " << contact.get_first_name() << std::endl;
+	std::cout << "Last Name: " << contact.get_last_name() << std::endl;
+	std::cout << "Nickname: " << contact.get_nickname() << std::endl;
+	std::cout << "Phone Number: " << contact.get_phone_number() << std::endl;
+	std::cout << "Darkest Secret: " << contact.get_darkest_secret() << std::endl;
 }
 
 Contact	Phonebook::get_contact(int index)
@@ -109,7 +109,7 @@ void	Phonebook::search(void)
 		if (std::getline(std::cin, str) && str != "")
 		{
 			if (str.size() == 1 && str[0] >= '1' && str[0] <= '8' && \
-					this->_contacts[str[0] - 1 - '0'].get_fname().size())
+					this->_contacts[str[0] - 1 - '0'].get_first_name().size())
 				break ;
 		}
 		if (str != "")

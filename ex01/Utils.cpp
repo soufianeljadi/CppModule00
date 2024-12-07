@@ -6,7 +6,7 @@
 /*   By: sel-jadi <sel-jadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:37:19 by sel-jadi          #+#    #+#             */
-/*   Updated: 2024/12/07 17:07:53 by sel-jadi         ###   ########.fr       */
+/*   Updated: 2024/12/07 17:14:34 by sel-jadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ std::string	wide(std::string str)
 	return (str);
 }
 
-int	search_ui(Contact contacts[8])
+int	search_display(Contact contacts[8])
 {
 	char		c;
 	int			i;

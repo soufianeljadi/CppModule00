@@ -6,7 +6,7 @@
 /*   By: sel-jadi <sel-jadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:44:42 by sel-jadi          #+#    #+#             */
-/*   Updated: 2024/12/07 16:56:02 by sel-jadi         ###   ########.fr       */
+/*   Updated: 2024/12/07 17:14:52 by sel-jadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	Phonebook::search(void)
 {
 	std::string	str;
 
-	if (!search_ui(this->_contacts))
+	if (!search_display(this->_contacts))
 	{
 		std::cout << std::endl << "Phonebook is empty!" << std::endl;
 		return ;

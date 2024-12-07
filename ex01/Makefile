@@ -12,6 +12,7 @@ $(NAME)	: $(OBJ)
 
 %.o : %.c Phonebook.hpp Contact.hpp Utils.hpp
 	@$(CC) $(CPPFLAGS) -c $< -o $@
+
 clean :
 	$(RM) $(OBJ)
 

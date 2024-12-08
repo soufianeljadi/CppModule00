@@ -14,6 +14,7 @@ class	Phonebook
 	public:
 		Phonebook();
 		~Phonebook();
+		
 		void	add();
 		void	search();
 		void	print(Contact contact);

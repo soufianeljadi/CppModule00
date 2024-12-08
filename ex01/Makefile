@@ -7,11 +7,8 @@ RM = rm -rf
 
 all	: $(NAME)
 
-$(NAME)	: $(OBJ) 
+$(NAME)	: $(OBJ) Phonebook.hpp Contact.hpp Utils.hpp
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
-
-%.o : %.c Phonebook.hpp Contact.hpp Utils.hpp
-	@$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean :
 	$(RM) $(OBJ)

@@ -5,14 +5,12 @@
 Phonebook::Phonebook(void)
 {
 	this->_index = 0;
-	std::cout << \
-		"Welcome to Crappy! Created an empty phonebook for up to 8 contacts" \
-		<< std::endl;
+	std::cout << "Hi there create an empty phonebook for up to 8 contacts" << std::endl;
 }
 
 Phonebook::~Phonebook(void)
 {
-	std::cout << "See you soon!" << std::endl;
+	std::cout << "Take care "<< std::endl << "Reminder : all data will be losed !" << std::endl;
 }
 
 void	Phonebook::add(void)
@@ -21,10 +19,10 @@ void	Phonebook::add(void)
 
 	str = "";
 	if (this->_index > 7)
-		std::cout << "Warning: overwriting info about " << this->_contacts[this->_index % 8].get_first_name() << std::endl;
+		std::cout << "Warning: you will lose " << this->_contacts[this->_index % 8].get_first_name() << std::endl;
 	while (!std::cin.eof() && str == "")
 	{
-		std::cout << "Enter a first name: ";
+		std::cout << "Enter the first name: ";
 		if (std::getline(std::cin, str) && str != "")
 			this->_contacts[this->_index % 8].set_first_name(str);
 	}

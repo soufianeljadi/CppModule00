@@ -19,34 +19,16 @@ std::string	wide(std::string str)
 	}
 	return (str);
 }
-
-int	search_display(Contact contacts[8])
+int is_valid_input(const std::string& str)
 {
-	char		c;
-	int			i;
-	std::string	str;
+    size_t i = 0;
 
-	std::cout << " ___________________________________________ " << std::endl;
-	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
-	std::cout << "|----------|----------|----------|----------|" << std::endl;
-	c = '0';
-	i = 0;
-	while (++c <= '8')
+    while (i < str.size() && std::isprint(str[i]))
 	{
-		if (contacts[c - 1 - 48].get_first_name().size() && ++i)
-		{
-			str = c;
-			str = wide(str);
-			std::cout << "|" << add_spaces(10 - str.size()) << str;
-			str = wide(contacts[c - 1  - 48].get_first_name());
-			std::cout << "|" << add_spaces(10 - str.size()) << str;
-			str = wide(contacts[c - 1 - 48].get_last_name());
-			std::cout << "|" << add_spaces(10 - str.size()) << str;
-			str = wide(contacts[c - 1 - 48].get_nickname());
-			std::cout << "|" << add_spaces(10 - str.size()) << str;
-			std::cout << "|" << std::endl;
-		}
-	}
-	std::cout << " ------------------------------------------- " << std::endl;
-	return (i);
+        i++;
+    }
+    if (i == str.size() && !str.empty())
+        return 1;
+	else 
+		return 0;
 }

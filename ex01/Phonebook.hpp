@@ -14,11 +14,11 @@ class	Phonebook
 	public:
 		Phonebook();
 		~Phonebook();
+		Contact	get_contact(int index);
 		
 		void	add();
 		void	search();
 		void	print(Contact contact);
-		Contact	get_contact(int index);
 };
 
 #endif

@@ -28,7 +28,7 @@ void Phonebook::add(void)
 
     std::cout << "Enter the first name: ";
     while (1) {
-        if (std::getline(std::cin, str) && is_valid_input(str)) {
+        if (std::getline(std::cin, str) && is_valid_input(str, 0)) {
             _contacts[_index % 8].set_first_name(str);
             break;
         } else {
@@ -38,7 +38,7 @@ void Phonebook::add(void)
 
     std::cout << "Enter " << _contacts[_index % 8].get_first_name() << "'s last name: ";
     while (1) {
-        if (std::getline(std::cin, str) && is_valid_input(str)) {
+        if (std::getline(std::cin, str) && is_valid_input(str, 0)) {
             _contacts[_index % 8].set_last_name(str);
             break;
         } else {
@@ -48,7 +48,7 @@ void Phonebook::add(void)
 
     std::cout << "Enter " << _contacts[_index % 8].get_first_name() << "'s nickname: ";
     while (1) {
-        if (std::getline(std::cin, str) && is_valid_input(str)) {
+        if (std::getline(std::cin, str) && is_valid_input(str, 0)) {
             _contacts[_index % 8].set_nickname(str);
             break;
         } else {
@@ -58,7 +58,7 @@ void Phonebook::add(void)
 
     std::cout << "Enter " << _contacts[_index % 8].get_first_name() << "'s phone number: ";
     while (1) {
-        if (std::getline(std::cin, str) && is_valid_input(str)) {
+        if (std::getline(std::cin, str) && is_valid_input(str, 1)) {
             _contacts[_index % 8].set_phone_number(str);
             break;
         } else {
@@ -68,7 +68,7 @@ void Phonebook::add(void)
 
     std::cout << "Enter " << _contacts[_index % 8].get_first_name() << "'s darkest secret: ";
     while (1) {
-        if (std::getline(std::cin, str) && is_valid_input(str)) {
+        if (std::getline(std::cin, str) && is_valid_input(str, 0)) {
             _contacts[_index % 8].set_darkest_secret(str);
             break;
         } else {

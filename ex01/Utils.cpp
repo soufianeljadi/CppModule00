@@ -14,16 +14,24 @@ int allSpcs(const std::string &s)
 		return 0;
 }
 
-int is_valid_input(const std::string& str)
+int is_valid_input(const std::string& str, int p)
 {
     size_t i = 0;
-
+	
+	if (p == 1)
+	{
+		while (i < str.size() && std::isdigit(str[i]))
+			i++;
+		if (i == str.size() && !str.empty())
+			return 1;
+		else 
+			return 0;
+	}
+	i = 0;
 	if (allSpcs(str))
 		return (0);
     while (i < str.size() && std::isprint(str[i]))
-	{
         i++;
-    }
     if (i == str.size() && !str.empty())
         return 1;
 	else 

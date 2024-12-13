@@ -5,12 +5,12 @@
 Phonebook::Phonebook(void)
 {
 	this->_index = 0;
-	std::cout << "Hi there create an empty phonebook for up to 8 contacts" << std::endl;
+	std::cout << "Hello there, a phonebook with ability to store 8 contacts was created" << std::endl;
 }
 
 Phonebook::~Phonebook(void)
 {
-	std::cout << "Take care "<< std::endl << "Reminder : all data will be losed !" << std::endl;
+	std::cout << "Take care "<< std::endl << "kindely remainder : all the contacts are gone :)" << std::endl;
 }
 
 Contact	Phonebook::get_contact(int index)
@@ -32,7 +32,7 @@ void Phonebook::add(void)
             _contacts[_index % 8].set_first_name(str);
             break;
         } else {
-            std::cout << "Invalid input. Please enter a valid first name: ";
+            std::cout << "Invalid input, Please enter a valid first name: ";
         }
     }
 
@@ -42,7 +42,7 @@ void Phonebook::add(void)
             _contacts[_index % 8].set_last_name(str);
             break;
         } else {
-            std::cout << "Invalid input. Please enter a valid last name: ";
+            std::cout << "Invalid input, Please enter a valid last name: ";
         }
     }
 
@@ -52,7 +52,7 @@ void Phonebook::add(void)
             _contacts[_index % 8].set_nickname(str);
             break;
         } else {
-            std::cout << "Invalid input. Please enter a valid nickname: ";
+            std::cout << "Invalid input, Please enter a valid nickname: ";
         }
     }
 
@@ -62,7 +62,7 @@ void Phonebook::add(void)
             _contacts[_index % 8].set_phone_number(str);
             break;
         } else {
-            std::cout << "Invalid input. Please enter a valid phone number: ";
+            std::cout << "Invalid input, Please enter a valid phone number: ";
         }
     }
 
@@ -72,12 +72,11 @@ void Phonebook::add(void)
             _contacts[_index % 8].set_darkest_secret(str);
             break;
         } else {
-            std::cout << "Invalid input. Please enter a valid darkest secret: ";
+            std::cout << "Invalid input, Please enter a valid darkest secret: ";
         }
     }
 
-    std::cout << _contacts[_index % 8].get_first_name() << " successfully added to phonebook [" 
-              << (_index % 8 + 1) << "/8]" << std::endl;
+    std::cout << _contacts[_index % 8].get_first_name() << " successfully added to your phonebook" << std::endl;
 
     _index++;
 }

@@ -6,7 +6,7 @@ int	main(int ac, char **av)
 	(void)av;
 	if (ac != 1)
 	{
-		std::cout << "No arguments needed! )" << std::endl;
+		std::cout << "No arguments needed!" << std::endl;
 		return (0);
 	}
 	std::string	str;

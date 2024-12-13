@@ -18,7 +18,7 @@ class	Phonebook
 		
 		void	add();
 		void	search();
-		void	print(Contact contact);
+		void	infos(Contact contact);
 };
 
 #endif

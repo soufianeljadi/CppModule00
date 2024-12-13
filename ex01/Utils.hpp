@@ -8,5 +8,6 @@
 std::string	wide(std::string str);
 std::string	add_spaces(int n);
 int is_valid_input(const std::string& str) ;
+int allSpcs(const std::string &s);
 
 #endif

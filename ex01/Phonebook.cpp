@@ -27,7 +27,7 @@ void Phonebook::add(void)
     }
 
     std::cout << "Enter the first name: ";
-    while (true) {
+    while (1) {
         if (std::getline(std::cin, str) && is_valid_input(str)) {
             _contacts[_index % 8].set_first_name(str);
             break;
@@ -37,7 +37,7 @@ void Phonebook::add(void)
     }
 
     std::cout << "Enter " << _contacts[_index % 8].get_first_name() << "'s last name: ";
-    while (true) {
+    while (1) {
         if (std::getline(std::cin, str) && is_valid_input(str)) {
             _contacts[_index % 8].set_last_name(str);
             break;
@@ -47,7 +47,7 @@ void Phonebook::add(void)
     }
 
     std::cout << "Enter " << _contacts[_index % 8].get_first_name() << "'s nickname: ";
-    while (true) {
+    while (1) {
         if (std::getline(std::cin, str) && is_valid_input(str)) {
             _contacts[_index % 8].set_nickname(str);
             break;
@@ -57,7 +57,7 @@ void Phonebook::add(void)
     }
 
     std::cout << "Enter " << _contacts[_index % 8].get_first_name() << "'s phone number: ";
-    while (true) {
+    while (1) {
         if (std::getline(std::cin, str) && is_valid_input(str)) {
             _contacts[_index % 8].set_phone_number(str);
             break;
@@ -67,7 +67,7 @@ void Phonebook::add(void)
     }
 
     std::cout << "Enter " << _contacts[_index % 8].get_first_name() << "'s darkest secret: ";
-    while (true) {
+    while (1) {
         if (std::getline(std::cin, str) && is_valid_input(str)) {
             _contacts[_index % 8].set_darkest_secret(str);
             break;
@@ -82,19 +82,14 @@ void Phonebook::add(void)
     _index++;
 }
 
-void	Phonebook::print(Contact contact)
+void	Phonebook::infos(Contact contact)
 {
-	std::cout << std::endl << "Requesting contact information..." << std::endl;
-	if (!contact.get_first_name().size())
-	{
-		std::cout << "Failed to get info for this contact" << std::endl;
-		return ;
-	}
-	std::cout << "First Name: " << contact.get_first_name() << std::endl;
+	std::cout << std::endl << "Contact infos :" << std::endl;
+	std::cout << std::endl << "First Name: " << contact.get_first_name() << std::endl;
 	std::cout << "Last Name: " << contact.get_last_name() << std::endl;
 	std::cout << "Nickname: " << contact.get_nickname() << std::endl;
 	std::cout << "Phone Number: " << contact.get_phone_number() << std::endl;
-	std::cout << "Darkest Secret: " << contact.get_darkest_secret() << std::endl;
+	std::cout << "Darkest Secret: " << contact.get_darkest_secret() << std::endl<< std::endl;
 }
 
 void	Phonebook::search(void)
@@ -132,16 +127,15 @@ void	Phonebook::search(void)
 	}
 	while (!std::cin.eof())
 	{
-		std::cout << "Select an index: ";
+		std::cout << "Choose an index for more infos: ";
 		if (std::getline(std::cin, str) && str != "")
 		{
-			if (str.size() == 1 && str[0] >= '1' && str[0] <= '8' && \
-					this->_contacts[str[0] - 1 - '0'].get_first_name().size())
+			if (str.size() == 1 && str[0] >= '1' && str[0] <= '8' && this->_contacts[str[0] - 1 - '0'].get_first_name().size())
 				break ;
 		}
 		if (str != "")
 			std::cout << "Invalid index!" << std::endl;
 	}
 	if (!std::cin.eof())
-		this->print(this->_contacts[str[0] - 1 - '0']);
+		this->infos(this->_contacts[str[0] - 1 - '0']);
 }

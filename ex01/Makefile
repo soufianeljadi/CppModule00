@@ -1,7 +1,7 @@
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = Contact.cpp Phonebook.cpp Utils.cpp main.cpp
-NAME = crappy
+NAME = my_phonebook
 OBJ =$(SRC:.cpp=.o)
 RM = rm -rf
 

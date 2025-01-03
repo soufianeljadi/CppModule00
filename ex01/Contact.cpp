@@ -12,6 +12,7 @@ Contact::~Contact(void)
 std::string	Contact::get_first_name(void) const
 {
 	return (this->_first_name);
+
 }
 
 std::string	Contact::get_last_name(void) const

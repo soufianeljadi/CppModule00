@@ -93,33 +93,34 @@ void	Phonebook::infos(Contact contact)
 
 void	Phonebook::search(void)
 {
-	char		c;
+	int		c;
 	int			i;
 	std::string	str;
 
 	std::cout << " ___________________________________________ " << std::endl;
 	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
-	c = '0';
+				   
+	c = 0;
 	i = 0;
-	while (++c <= '8')
+	while (++c <= 8)
 	{
-		if (this->_contacts[c - 1 - 48].get_first_name().size() && ++i)
+		if (this->_contacts[c - 1 ].get_first_name().size() && ++i)
 		{
-			str = c;
+			str = c + 48;
 			str = wide(str);
 			std::cout << "|" << add_spaces(10 - str.size()) << str;
-			str = wide(this->_contacts[c - 1  - 48].get_first_name());
+			str = wide(this->_contacts[c - 1  ].get_first_name());
 			std::cout << "|" << add_spaces(10 - str.size()) << str;
-			str = wide(this->_contacts[c - 1 - 48].get_last_name());
+			str = wide(this->_contacts[c - 1 ].get_last_name());
 			std::cout << "|" << add_spaces(10 - str.size()) << str;
-			str = wide(this->_contacts[c - 1 - 48].get_nickname());
+			str = wide(this->_contacts[c - 1 ].get_nickname());
 			std::cout << "|" << add_spaces(10 - str.size()) << str;
 			std::cout << "|" << std::endl;
 		}
 	}
 	std::cout << " ------------------------------------------- " << std::endl;
-	if (i == 0)
+	if (_index == 0)
 	{
 		std::cout << std::endl << "Phonebook is empty!" << std::endl;
 		return ;
